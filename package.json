@@ -1,0 +1,21 @@
+{
+  "name": "aqa-framework",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xmtigra/aqa-framework.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xmtigra/aqa-framework/issues"
+  },
+  "homepage": "https://github.com/xmtigra/aqa-framework#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.31.2"
+  }
+}
