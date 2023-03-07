@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test --project chromium",
+    "debug": "playwright test --project chromium --debug",
+    "update-snapshots": "playwright test --update-snapshots"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xmtigra/aqa-framework.git"
@@ -16,6 +20,7 @@
   },
   "homepage": "https://github.com/xmtigra/aqa-framework#readme",
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "@playwright/test": "^1.31.2"
   }
 }

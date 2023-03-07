@@ -1,18 +1,29 @@
 import { test, expect } from '@playwright/test';
+import { HomePage } from '../page/home.page';
 
-test('has title', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
 
-  // Expect a title "to contain" a substring.
-  await expect(page).toHaveTitle(/Playwright/);
+test.describe.parallel('TechMagic web site', () => {
+  
+  test('has title', async ({ page }) => {
+    const homePage = new HomePage(page);
+    await homePage.goto();
+    await homePage.verifyTitle('JavaScript Development Company - TechMagic');
+  });
+  
+  test('get started link', async ({ page }) => {
+    const homePage = new HomePage(page);
+    await homePage.goto();
+    await homePage.clickGetStarted();
+    await homePage.verifyUrl('https://www.techmagic.co/#section-message');
+  });
+
+  test('verify UI', async ({ page }) => {
+    const homePage = new HomePage(page);
+    await homePage.goto();
+    await expect(page).toHaveScreenshot('home.png', {
+      threshold: 0.3,
+    });
+  });
+  
 });
 
-test('get started link', async ({ page }) => {
-  await page.goto('https://playwright.dev/');
-
-  // Click the get started link.
-  await page.getByRole('link', { name: 'Get started' }).click();
-
-  // Expects the URL to contain intro.
-  await expect(page).toHaveURL(/.*intro/);
-});
