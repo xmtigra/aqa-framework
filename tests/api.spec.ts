@@ -1,8 +1,9 @@
+require('dotenv').config()
 import {expect, test} from '@playwright/test';
 import {User} from "../data/user.data";
 
 const API_URL = 'https://gorest.co.in/public/v2';
-const API_TOKEN = '4e745355cb4ed3033948d1e35c7c677c0d125e55467317b18bae7bc1de2d7667';
+const API_TOKEN = process.env.API_TOKEN;
 
 const headers = {
     authorization: `Bearer ${API_TOKEN}`,
